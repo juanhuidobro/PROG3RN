@@ -16,8 +16,8 @@ export default class DrawerNav extends Component{
 <NavigationContainer>
      <Drawer.Navigator>
         <Drawer.Screen name="Home" component={()=><Home />} />
-        <Drawer.Screen name="Login" component={()=><login />} />
-        <Drawer.Screen name="Register" component={()=><register />} />
+        <Drawer.Screen name="Login" component={()=><Login />} />
+        <Drawer.Screen name="Register" component={()=><Register />} />
      </Drawer.Navigator>
    </NavigationContainer>
 
