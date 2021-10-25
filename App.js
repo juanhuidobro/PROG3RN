@@ -1,13 +1,10 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import {View} from 'react-native';
-import Home from './src/screens/Home';
-import Register from './src/screens/register';
-function App() {
+import {Text, View} from 'react-native'; 
+import DrawerNav from './src/components/DrawerNav';
+
+export default function App () {
   return (
-    <View>
-      <Home />
-      <Register />
-    </View>
-  );
+    <DrawerNav/>
+  )
 }
-export default App;
