@@ -6,7 +6,33 @@ import Home from '../screens/Home';
 import Register from '../screens/Register';
 import Login from '../screens/Login';
 
+import { auth } from '../firebase/config'
+
 const Drawer = createDrawerNavigator();
+export default class DrawerNav extends Component{
+    constructor(props){
+    super(props);
+    this.state = {
+        IsLoggedIn: false,
+        user:'',
+        error:'',
+    }
+}
+
+componentDidMount(){
+    auth.onAuthStateChanged((user) => {
+        if(user) {
+            this.setState({
+                IsLoggedIn: true,
+            })
+        }else{
+            this.setState({
+                IsLoggedIn: false,
+            })
+        }
+    })
+}
+
 class DrawerNav extends Component{
     render(){
         return(
