@@ -13,27 +13,60 @@ export default class DrawerNav extends Component{
     constructor(props){
     super(props);
     this.state = {
-        IsLoggedIn: false,
+        isLoggedIn: false,
         user:'',
         error:'',
     }
+}
+
+login(email, password){
+    auth.signInWithEmailAndPassword(email, password)
+    .then( responsive => {
+        this.setState({
+            isLoggedIn: true,
+            user: response.user.email,
+            error: '' 
+        })
+    })
+    .catch( error => {
+        this.setState({
+            IsLoggedIn: false,
+            error: "email o password incorrecto"
+        })
+    })
+}
+
+register(email, password){
+    auth.createUserWithEmailAndPassword(email, password)
+    .then( responsive => {
+        this.setState({
+            isLoggedIn: true,
+            user: response.user.email,
+            error: '' 
+        })
+    })
+    .catch( error => {
+        this.setState({
+            IsLoggedIn: false,
+            error: "error en registracion"
+        })
+    })
 }
 
 componentDidMount(){
     auth.onAuthStateChanged((user) => {
         if(user) {
             this.setState({
-                IsLoggedIn: true,
+                isLoggedIn: true,
             })
         }else{
             this.setState({
-                IsLoggedIn: false,
+                isLoggedIn: false,
             })
         }
     })
 }
 
-class DrawerNav extends Component{
     render(){
         return(
             <NavigationContainer>
