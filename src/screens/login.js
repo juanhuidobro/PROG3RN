@@ -34,5 +34,34 @@ class Login extends Component{
     }  
 }
 const styles = StyleSheet.create({
+    container: {
+        height: 250,
+        marginTop: 20
+    },
+    titulo:{
+        fontFamily: 'arial',
+        textAlign: 'center',
+        color: 'green',
+        fontSize: '2rem'
+    },
+    input: {
+        height: 15,
+        borderWidth: 1,
+        borderStyle: 'solid',
+        borderColor: '#ccc',
+        borderRadius: 6,
+        marginVertical:10
+    },
+    boton: {
+        backgroundColor: 'blue',
+        textAlign: 'center',
+        borderRadius: 4,
+        borderWidth: 1,
+        borderStyle: 'solid',
+        borderColor: 'white'
+    },
+    enviar:{
+        color: 'white'
+    }
 })
 export default Login;
