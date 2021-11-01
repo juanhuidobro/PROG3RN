@@ -9,7 +9,9 @@ export default class Home extends Component{
     render(){
         return(
             <View style={StyleSheet.container}>
-               <Text></Text>
+               <Text>
+
+               </Text>
             </View>
         )
     }
