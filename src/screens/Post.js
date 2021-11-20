@@ -18,3 +18,10 @@ class Post extends Component {
             let likes = this.props.doc.data.likes.length;
             this.setState({
                 likes: likes,
+                if (this.props.doc.data.likes.includes(auth.currentUser.email)) {
+                    this.setState({
+                        liked: true,
+                    })  
+                }
+            } 
+        } 
