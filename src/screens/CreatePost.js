@@ -82,3 +82,24 @@ const styles = StyleSheet.create({
         width: '100%',
         margin: 5,
     },
+    button: {
+        backgroundColor: "#fde79e",
+        paddingHorizontal: 10,
+        paddingVertical: 6,
+        textAlign: "center",
+        borderRadius: 10,
+        borderWidth: 1,
+        borderStyle: "solid",
+        borderColor: "#fde79e",
+      },
+      textButton: {
+        color: "black",
+      },
+      imagen: {
+        height:250,
+        borderRadius: 15,  
+      },
+    })
+
+
+export default crearPost;
