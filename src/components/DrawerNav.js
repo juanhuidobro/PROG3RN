@@ -19,7 +19,7 @@ export default class DrawerNav extends Component{
     }
 }
 
-login(email, password){
+ingresar(email, password){
     auth.signInWithEmailAndPassword(email, password)
     .then( responsive => {
         this.setState({
@@ -36,20 +36,15 @@ login(email, password){
     })
 }
 
-register(email, password){
+registrarse(email, password){
     auth.createUserWithEmailAndPassword(email, password)
-    .then( responsive => {
-        this.setState({
-            isLoggedIn: true,
-            user: response.user.email,
-            error: '' 
-        })
+    .then( response => {
+        console.log(response);
+        this.setState({loggedIn: true})
     })
     .catch( error => {
-        this.setState({
-            IsLoggedIn: false,
-            error: "error en registracion"
-        })
+        console.log(error);
+        this.setState({loggedIn: false})
     })
 }
 

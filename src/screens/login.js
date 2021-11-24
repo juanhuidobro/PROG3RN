@@ -27,7 +27,7 @@ class Login extends Component{
                 onChangeText = { (text) => this.setState({password: text})} 
             />
             <TouchableOpacity style = {styles.boton} onPress={() => this.props.login(this.state.email, this.state.password)}>
-                <Text style={styles.enviar}>Ingresar</Text>
+                <Text style={styles.ingresar}>Ingresar</Text>
             </TouchableOpacity>
         </View>
         )
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         borderStyle: 'solid',
         borderColor: 'white'
     },
-    enviar:{
+    ingresar:{
         color: 'white'
     }
 })
