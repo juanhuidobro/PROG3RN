@@ -38,4 +38,47 @@ agregarPost(){
             mostrarCamara: false,
         })
     }
-    
+    render() {
+        return this.state.mostrarCamara ? (
+            
+            <MyCamera subirFoto={(foto) => this.subirFoto (foto)} />
+        ) : (
+            
+                 <View>
+
+            
+                <TextInput style={styles.lugar}
+                       onChangeText={(text) => this.setState({ descripcion: text })}
+                       placeholder="Descripcion"
+                       keyboardType="default"
+                       multiline={true}
+                       numberOfLines={4}
+                       value= {this.state.descripcion}
+                    />
+                    <TouchableOpacity  
+                    style={styles.button}  
+                    onPress={() => this.agregarPost()}
+                    >
+                        <Text style= {styles.textButton}> Agregar Post</Text>
+                    </TouchableOpacity>
+            </View>
+        )
+    }
+}
+const styles = StyleSheet.create({
+    contenedor: {
+        alignItems: 'center',
+        paddingHorizontal: 12,
+        paddingVertical: 20, 
+    },
+
+    lugar: {   
+        height: 20,
+        paddingVertical: 15,
+        paddingHorizontal: 10,
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 6,
+        width: '100%',
+        margin: 5,
+    },
