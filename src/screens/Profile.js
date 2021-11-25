@@ -35,9 +35,8 @@ import Post from '../components/Post'
                 <Text style={styles.infoLogin1}>Bienvenid@ {auth.currentUser.displayName}</Text>
                 <Text style={styles.infoLogin}>Email: {auth.currentUser.email}</Text>
                 <Text style={styles.infoLogin}>Tu usuario fue creado el: {auth.currentUser.metadata.creationTime}</Text>
-                <Text style={styles.infoLogin}>La ultima vez que te logueaste a GRUMIT: {auth.currentUser.metadata.lastSignInTime}</Text>
                 <Text style={styles.infoLogin}>Cantidad de posteos: {this.state.posts.length}</Text>
-                <TouchableOpacity style={styles.button} onPress={()=>this.props.logout()}>
+                <TouchableOpacity style={styles.button} onPress={()=>this.props.signOut()}>
                     <Text>CERRAR SESION </Text>
                 </TouchableOpacity>
                 

@@ -249,7 +249,6 @@ const styles = StyleSheet.create({
         borderColor: '#000000',
         borderRadius: 10,
         padding: 10,
-        backgroundColor: '#000000',
     },
     closeModal:{
         alignSelf: 'flex-end',
