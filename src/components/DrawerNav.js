@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
-import Home from '../screens/Home';
-import Register from '../screens/Register';
-import Login from '../screens/Login';
+import Home from '../screens/home';
+import Register from '../screens/register';
+import Login from '../screens/login';
 
 import { auth } from '../firebase/config'
 
