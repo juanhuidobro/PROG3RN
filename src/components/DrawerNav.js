@@ -10,7 +10,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Register from '../screens/Register';
 import Login from '../screens/Login';
 import Home from '../screens/Home';
-//import Profile from '../screens/Profile';
+import Profile from '../screens/Profile';
 import CreatePost from '../screens/CreatePost';
 
 //Aquí importo la configuración del auth que me ofrece firebase
