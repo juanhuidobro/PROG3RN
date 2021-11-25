@@ -1,21 +1,37 @@
 import React, {Component} from "react";
 import {View, Text, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
 
+//Aquí importo el auth que me da Firebase
+import auth from '../firebase/config';
+//---------------------------------------
+
 class Register extends Component{
-    constructor(){
-        super();
+    //Aquí es donde recibo los el email, el nombre del usuario y el password del usuario que se va a registrar
+    constructor(props){
+        super(props);
         this.state = {
-            email : '',
+            username: '',    //Estos esados reesentam los datos a pedir
+            email : '',      //en el formulario   
             password: ''
+            
         }
     }
-    enviar(){
-        console.log(`El email que se coloco es: ${this.state.email} `);
-    }
+    //Esto lo puse en comentarios, ya que era una prueba para verificar si los datos estaban siendo enviados, si desea verificarlo que los comantarios y en el touchable opacity, disponga el uso del evento  onPress = {this.enviar() }
+    //enviar(){
+    //    console.log(`El email que se coloco es: ${this.state.email} `);
+    //}
+
+    //Para grabar los datos del usuario en la base de datos no relacional firebase, sólo debemos utilizar 
     render(){
         return(
             <View style= {styles.container}>
                 <Text style={styles.titulo}>Registro de usuarios</Text>
+                <TextInput
+                    style ={styles.input}
+                    placeholder = 'Introduzca su nombre'
+                    keyboardType = 'default'
+                    onChangeText = { (text) => this.setState({username: text})} 
+                />
                 <TextInput
                     style ={styles.input}
                     placeholder = 'Introduzca su email'
@@ -29,13 +45,15 @@ class Register extends Component{
                     secureTextEntry = {true}
                     onChangeText = { (text) => this.setState({password: text})} 
                 />
-                <TouchableOpacity style = {styles.boton} onPress = {this.enviar() }>
-                    <Text style={styles.enviar}>Enviar</Text>
+                
+                <TouchableOpacity style = {styles.boton} onPress={() => this.props.register(this.state.username, this.state.email, this.state.password )}>
+                    <Text style={styles.enviar}>Registrarme</Text>
                 </TouchableOpacity>
             </View>
         )
     }
 }
+//Aquí genero el CSS para mi componente
 const styles = StyleSheet.create({
     container: {
         height: 250,
