@@ -16,10 +16,7 @@ class Register extends Component{
             
         }
     }
-    //Esto lo puse en comentarios, ya que era una prueba para verificar si los datos estaban siendo enviados, si desea verificarlo que los comantarios y en el touchable opacity, disponga el uso del evento  onPress = {this.enviar() }
-    //enviar(){
-    //    console.log(`El email que se coloco es: ${this.state.email} `);
-    //}
+    
 
     //Para grabar los datos del usuario en la base de datos no relacional firebase, sólo debemos utilizar 
     render(){
@@ -53,7 +50,7 @@ class Register extends Component{
         )
     }
 }
-//Aquí genero el CSS para mi componente
+
 const styles = StyleSheet.create({
     container: {
         height: 250,
@@ -62,7 +59,7 @@ const styles = StyleSheet.create({
     titulo:{
         fontFamily: 'arial',
         textAlign: 'center',
-        color: 'tomato',
+        color: 'red',
         fontSize: '2rem'
     },
     input: {
